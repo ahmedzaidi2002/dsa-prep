@@ -1,6 +1,23 @@
-// https://leetcode.com/problems/max-area-of-island/
+/*
+https://leetcode.com/problems/max-area-of-island/
 
-// My code
+Pattern:
+    DFS on Grid
+
+Difficulty:
+    Medium
+
+Time Complexity:
+    O(m*n)
+
+Space Complexity:
+    O(m*n) recursion stack
+*/
+
+// ----------------------------------------
+// My Code
+// ----------------------------------------
+
 class Solution {
 public:
 
@@ -37,7 +54,10 @@ public:
     }
 };
 
-// Best code
+// ----------------------------------------
+// Best Code
+// ----------------------------------------
+
 class Solution {
 public:
     const int dx[4] = {1, 0, -1, 0};
@@ -81,3 +101,30 @@ public:
         return ans;
     }
 };
+
+/*
+----------------------------------------
+Differences
+----------------------------------------
+1. DFS returns area (1 + neighbours) instead of threading sz as a param.
+2. Marks visited by grid[r][c]=0 instead of a separate visited matrix -> saves O(m*n) space.
+3. ans = max(ans, dfs(...)) directly, no temp variable.
+4. Direction arrays are const.
+
+----------------------------------------
+Key Learnings
+----------------------------------------
+- Prefer DFS returning a value over mutating state through params.
+- Reuse input grid as visited marker when mutation is allowed.
+- Each recursive call should answer one clear question.
+- Mark constant data as const.
+
+----------------------------------------
+Interview Notes
+----------------------------------------
+General grid DFS pattern:
+    answer(cell) = contribution(cell) + sum(answer(valid neighbours))
+
+Applies to: Number of Islands, Flood Fill, Surrounded Regions,
+Pacific Atlantic Water Flow, Word Search, Connected Components.
+*/
