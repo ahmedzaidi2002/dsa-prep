@@ -7,8 +7,13 @@ built while preparing for placements.
 
 ```
 dsa-prep/
-├── important questions/       # Solved problems, one file per problem
-│   └── "<number>. <Problem Name>.cpp"
+├── important questions/
+│   ├── solved questions/       # straightforward solved problems
+│   │   └── "<number>. <Problem Name>.cpp"
+│   └── optimized solutions/    # problems needing deeper conceptual notes
+│       ├── "<number>. <Problem Name>.md"    # doubts/explanations, e.g.
+│       │                                    # tricky recurrence walkthroughs
+│       └── "<number>. <Problem Name>.cpp"
 │
 ├── important algorithms/      # One folder per core algorithm/technique
 │   └── "<Algorithm Name>/"
