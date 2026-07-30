@@ -11,9 +11,10 @@ dsa-prep/
 │   ├── solved questions/       # straightforward solved problems
 │   │   └── "<number>. <Problem Name>.cpp"
 │   └── optimized solutions/    # problems needing deeper conceptual notes
-│       ├── "<number>. <Problem Name>.md"    # doubts/explanations, e.g.
-│       │                                    # tricky recurrence walkthroughs
-│       └── "<number>. <Problem Name>.cpp"
+│       └── "<number>. <Problem Name>/"      # one subfolder per problem
+│           ├── "<number>. <Problem Name>.md"    # doubts/explanations, e.g.
+│           │                                    # tricky recurrence walkthroughs
+│           └── "<number>. <Problem Name>.cpp"
 │
 ├── important algorithms/      # One folder per core algorithm/technique
 │   └── "<Algorithm Name>/"
