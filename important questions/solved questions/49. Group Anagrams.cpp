@@ -48,16 +48,18 @@ public:
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        int n = strs.size();
         unordered_map<string, vector<string>> mp;
-
-        for (auto& s : strs) {
-            string key(26, '0');
-            for (char c : s) key[c - 'a']++;
-            mp[key].push_back(s);
+        for(int i=0;i<n;i++){
+            string temp = strs[i];
+            string key(26,'0');
+            for(auto ch:temp) key[ch-'a']++;
+            mp[key].push_back(temp);
         }
-
         vector<vector<string>> ans;
-        for (auto& [k, v] : mp) ans.push_back(move(v));
+        for(auto it : mp){
+            ans.push_back(it.second);
+        }
         return ans;
     }
 };
@@ -73,7 +75,8 @@ Differences
 2. My code stores indices and looks up strs[j] afterward.
    Best code stores the strings directly in the map value -> no
    indirection needed when building the answer.
-3. Best code moves vectors into ans instead of copying (move(v)).
+3. Same time complexity O(n*k) either way - the win is purely from
+   swapping the map key/value types, not from anything exotic.
 
 ----------------------------------------
 Key Learnings
